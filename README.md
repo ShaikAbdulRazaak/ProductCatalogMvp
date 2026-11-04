@@ -2,6 +2,12 @@
 
 A Modern Heritage fashion ecommerce proof of concept built with Android Jetpack Compose and a local Node.js backend-for-frontend (BFF).
 
+This is an AI-native proof of concept built in approximately five hours. The
+solution was deliberately structured as a foundation rather than a throwaway
+demo: product access is behind a BFF, configuration is externalized, and
+reusable dimensions, strings, and other design tokens are preferred over
+hardcoded values.
+
 ## Architecture
 
 ```text
@@ -104,6 +110,30 @@ The BFF validates product ID, name, email, and message. Submission currently use
 ## AWS deployment
 
 AWS is not required for the local POC. If a public HTTPS backend is needed later, the existing Docker image can be deployed to AWS App Runner through Amazon ECR. Configure a billing budget before creating paid resources.
+
+The first backend iteration was generated and run locally while the backend
+requirements were being explored. AWS deployment was intentionally paused
+because the available AWS services could introduce billing, which would violate
+the no-paid-service constraint for reviewers. The local Docker setup is therefore
+the supported path for this submission.
+
+## Development approach and time spent
+
+The work took approximately five hours:
+
+- Planning and architecture: about 1 hour.
+- Android and backend implementation: about 2 hours 45 minutes.
+- Testing, screenshot review, iteration, and documentation: about 1 hour 15 minutes.
+
+Multiple AI tools were used for different stages. Gemini via its website and
+the Gemini Android Studio plugin were used for initial planning and for
+understanding and bootstrapping the backend. ChatGPT via its website was used
+to create the Modern Heritage design direction and to review screenshots of
+the running app for visual improvements. GitHub Copilot in VS Code was then
+used to implement and refine the Android app, backend, and documentation with
+the Copilot Fusion model, which automatically selects an appropriate model for
+the use case. Every generated change was reviewed, tested, and iterated rather
+than accepted blindly.
 
 ## Project documentation
 
