@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - PORT=3000
+      - FAKE_STORE_API=${FAKE_STORE_API:-https://fakestoreapi.com}
